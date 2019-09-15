@@ -1,0 +1,6 @@
+module Pods_bleplxexpo {
+  umbrella header "Pods-bleplxexpo-umbrella.h"
+
+  export *
+  module * { export * }
+}
