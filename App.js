@@ -1,11 +1,9 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { BleManager } from 'react-native-ble-plx';
-import base64 from 'react-native-base64'
+import base64 from 'react-native-base64';
 
-class ConnectToLavviebot extends Component {
-
-}
+class ConnectToLavviebot extends Component {}
 
 export default class App extends Component {
   constructor(props) {
@@ -25,7 +23,7 @@ export default class App extends Component {
     command_packet: '',
     base64_command: '',
     response_received: ''
-  }
+  };
   scanAndConnect() {
     this.manager.startDeviceScan(null, null, (error, device) => {
       this.setState({
@@ -42,25 +40,30 @@ export default class App extends Component {
         response_received: ''
       });
       if (error) {
-          // Handle error (scanning will be stopped automatically)
-          this.setState({ error: 'error' });
-          return
+        // Handle error (scanning will be stopped automatically)
+        this.setState({ error: 'error' });
+        return;
       }
 
-        // Check if it is a device you are looking for based on advertisement data
-        // or other criteria.
-      if (device.name === 'LavvieBot_A66C') {
+      // Check if it is a device you are looking for based on advertisement data
+      // or other criteria.
+      if (device.name === 'LavvieBot_CCF9') {
         this.setState({ status: 'success', deviceId: device.id, deviceName: device.name });
 
         this.manager.stopDeviceScan();
-        return device.connect()
-          .then((device) => { return device.discoverAllServicesAndCharacteristics(); })
-          .then((device) => { return device.services(); })
-          .then((service) => {
+        return device
+          .connect()
+          .then(device => {
+            return device.discoverAllServicesAndCharacteristics();
+          })
+          .then(device => {
+            return device.services();
+          })
+          .then(service => {
             this.setState({ service_uuid: service[0].uuid });
             return service[0].characteristics();
           })
-          .then((characteristic) => {
+          .then(characteristic => {
             // characteristic[1].monitor((characteristic) => {}, null);
             // console.log(base64.decode(base64.encode('\x03\x01\x00\x04')) === '\x03\x01\x00\x04' ? '11' : '1');
             let commandData = '';
@@ -76,17 +79,17 @@ export default class App extends Component {
               tx_characteristic: characteristic[1],
               uart_rx_uuid: characteristic[0].uuid,
               uart_tx_uuid: characteristic[1].uuid,
-              command_packet : packetByteArray,
+              command_packet: packetByteArray,
               base64_command: base64Command
             });
 
             return characteristic[0].writeWithResponse(base64Command);
           })
-          .then((onfulfilled) => {
+          .then(onfulfilled => {
             this.setState({ transmit_status: 'success' });
             return this.state.tx_characteristic.read(null);
           })
-          .then((characteristic) => {
+          .then(characteristic => {
             // for (var i = 0; i < base64.decode(characteristic.value).length; i++) {
             //   console.log(base64.decode(characteristic.value)[i].charCodeAt());
             // }
@@ -98,11 +101,12 @@ export default class App extends Component {
             console.log(this.state.response_received);
             return this.manager.cancelDeviceConnection(this.state.deviceId);
           })
-          .catch((error)=> {
+          .catch(error => {
             this.setState({ error: JSON.stringify(error) });
             if (this.state.deviceId) {
-              return this.manager.cancelDeviceConnection(this.state.deviceId)
-                .then((device) => { return; })
+              return this.manager.cancelDeviceConnection(this.state.deviceId).then(device => {
+                return;
+              });
             }
           });
       }
@@ -155,9 +159,8 @@ export default class App extends Component {
 
   ConnectionNotify(props) {
     if (props.isConnected) {
-      return <Text style={{fontSize: 30, color: 'green'}}>Connected</Text>;
-    }
-    else {
+      return <Text style={{ fontSize: 30, color: 'green' }}>Connected</Text>;
+    } else {
       return null;
     }
   }
@@ -165,7 +168,9 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <TouchableOpacity onPress={this.scanAndConnect.bind(this)}><Text style={{ color: 'cyan', fontSize: 150 }}>SCAN</Text></TouchableOpacity>
+        <TouchableOpacity onPress={this.scanAndConnect.bind(this)}>
+          <Text style={{ color: 'cyan', fontSize: 150 }}>SCAN</Text>
+        </TouchableOpacity>
         <Text>deviceId: {this.state.deviceId}</Text>
         <Text>deviceName: {this.state.deviceName}</Text>
         <Text>error: {this.state.error}</Text>
@@ -186,6 +191,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
-  },
+    justifyContent: 'center'
+  }
 });
