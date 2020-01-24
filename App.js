@@ -22,7 +22,8 @@ export default class App extends Component {
     tx_characteristic: {},
     command_packet: '',
     base64_command: '',
-    response_received: ''
+    response_received: '',
+    received_characteristics: ''
   };
   scanAndConnect() {
     this.manager.startDeviceScan(null, null, (error, device) => {
@@ -55,42 +56,68 @@ export default class App extends Component {
         device
           .connect()
           .then(device => {
-            device.discoverAllServicesAndCharacteristics().then(device => {
-              device.services().then(service => {
-                this.setState({ service_uuid: service[0].uuid });
-                service[0].characteristics().then(characteristic => {
-                  let commandData = '';
-                  // 'ZZZZZZZZZZZZZZZZ';
-                  let commandPacket = '\x01' + '\x00' + commandData + '\x01';
-                  let base64Command = base64.encode(commandPacket);
-                  let packetByteArray = '';
-                  for (let index in commandPacket) {
-                    packetByteArray += commandPacket[index].charCodeAt() + ', ';
-                  }
-                  this.setState({
-                    tx_characteristic: characteristic[1],
-                    uart_rx_uuid: characteristic[0].uuid,
-                    uart_tx_uuid: characteristic[1].uuid,
-                    command_packet: packetByteArray,
-                    base64_command: base64Command
+            device
+              .discoverAllServicesAndCharacteristics()
+              .then(device => {
+                device
+                  .services()
+                  .then(service => {
+                    this.setState({ service_uuid: service[0].uuid });
+                    service[0]
+                      .characteristics()
+                      .then(characteristic => {
+                        let commandData = '';
+                        // 'ZZZZZZZZZZZZZZZZ';
+                        let commandPacket = '\x01' + '\x00' + commandData + '\x01';
+                        let base64Command = base64.encode(commandPacket);
+                        let packetByteArray = '';
+                        for (let index in commandPacket) {
+                          packetByteArray += commandPacket[index].charCodeAt() + ', ';
+                        }
+                        this.setState({
+                          tx_characteristic: characteristic[1],
+                          uart_rx_uuid: characteristic[0].uuid,
+                          uart_tx_uuid: characteristic[1].uuid,
+                          command_packet: packetByteArray,
+                          base64_command: base64Command
+                        });
+                        characteristic[0]
+                          .writeWithResponse(base64Command)
+                          .then(r_characteristics => {
+                            this.setState({ transmit_status: 'success' });
+                            this.manager.cancelDeviceConnection(this.state.deviceId);
+
+                            // this.state.tx_characteristic
+                            //   .read(null)
+                            //   .then(characteristic => {
+                            //     let responseByteArray = '';
+                            //     for (let index in base64.decode(characteristic.value)) {
+                            //       responseByteArray += base64.decode(characteristic.value)[index].charCodeAt() + ', ';
+                            //     }
+                            //     this.setState({ response_received: responseByteArray });
+                            //   })
+                            //   .catch(err => {
+                            //     this.setState({ error: JSON.stringify(err).concat(':tx_characteristic.read(null)') });
+                            //   });
+                          })
+                          .catch(err => {
+                            this.setState({ error: JSON.stringify(err).concat(':writeWithResponse') });
+                          });
+                      })
+                      .catch(err => {
+                        this.setState({ error: JSON.stringify(err).concat(':characteristics') });
+                      });
+                  })
+                  .catch(err => {
+                    this.setState({ error: JSON.stringify(err).concat(':services') });
                   });
-                  characteristic[0].writeWithResponse(base64Command).then(onfulfilled => {
-                    this.setState({ transmit_status: 'success' });
-                    this.state.tx_characteristic.read(null).then(characteristic => {
-                      let responseByteArray = '';
-                      for (let index in base64.decode(characteristic.value)) {
-                        responseByteArray += base64.decode(characteristic.value)[index].charCodeAt() + ', ';
-                      }
-                      this.setState({ response_received: responseByteArray });
-                      this.manager.cancelDeviceConnection(this.state.deviceId);
-                    });
-                  });
-                });
+              })
+              .catch(err => {
+                this.setState({ error: JSON.stringify(err).concat(':discoverAllServicesAndCharacteristics') });
               });
-            });
           })
           .catch(err => {
-            this.setState({ error: JSON.stringify(err) });
+            this.setState({ error: JSON.stringify(err).concat(':connect') });
           });
       }
     });
@@ -108,7 +135,7 @@ export default class App extends Component {
     return (
       <View style={styles.container}>
         <TouchableOpacity onPress={this.scanAndConnect.bind(this)}>
-          <Text style={{ color: 'cyan', fontSize: 150 }}>SCAN</Text>
+          <Text style={{ color: 'cyan', fontSize: 120 }}>SCAN</Text>
         </TouchableOpacity>
         <Text>deviceInfo: {this.state.deviceInfo}</Text>
         <Text>deviceId: {this.state.deviceId}</Text>
@@ -121,6 +148,7 @@ export default class App extends Component {
         <Text>requested data: {this.state.command_packet}</Text>
         <Text>response received: {this.state.response_received}</Text>
         <this.ConnectionNotify isConnected={this.state.service_uuid} />
+        <Text>received_characteristics: {this.state.received_characteristics}</Text>
       </View>
     );
   }
