@@ -1,0 +1,7 @@
+#Fri Jan 24 14:28:25 KST 2020
+base.0=/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/build/intermediates/transforms/dexMerger/debug/0
+path.1=classes.dex
+renamed.1=classes2.dex
+path.0=classes.dex
+renamed.0=classes.dex
+base.1=/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/build/intermediates/transforms/dexMerger/debug/1
