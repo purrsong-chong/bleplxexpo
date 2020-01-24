@@ -1,0 +1,211 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.bleplxexpo"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+8-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="27" />
+9-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:4:5-67
+11-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:4:22-64
+12    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+12-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:5:5-77
+12-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:5:22-75
+13
+14    <!-- OPTIONAL PERMISSIONS, REMOVE WHATEVER YOU DO NOT NEED -->
+15    <uses-permission android:name="android.permission.MANAGE_DOCUMENTS" />
+15-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:8:5-75
+15-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:8:22-72
+16    <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" />
+16-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:9:5-80
+16-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:9:22-77
+17    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+17-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:10:5-75
+17-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:10:22-72
+18    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+18-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:11:5-74
+18-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:11:22-71
+19    <uses-permission android:name="android.permission.VIBRATE" />
+19-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:12:5-66
+19-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:12:22-63
+20    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+20-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:13:5-80
+20-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:13:22-77
+21
+22    <!-- These require runtime permissions on M -->
+23    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+23-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:16:5-81
+23-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:16:22-78
+24    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+24-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:17:5-79
+24-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:17:22-76
+25    <uses-permission android:name="android.permission.CAMERA" />
+25-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:18:5-65
+25-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:18:22-62
+26    <uses-permission android:name="android.permission.READ_CONTACTS" />
+26-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:19:5-72
+26-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:19:22-69
+27    <uses-permission android:name="android.permission.READ_CALENDAR" />
+27-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:20:5-72
+27-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:20:22-69
+28    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+28-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:21:5-73
+28-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:21:22-70
+29    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+29-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:22:5-80
+29-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:22:22-77
+30    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+30-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:23:5-71
+30-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:23:22-68
+31    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+31-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:24:5-81
+31-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:24:22-78
+32    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+32-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:25:5-73
+32-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:25:22-70
+33    <uses-permission android:name="android.permission.BLUETOOTH" />
+33-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:26:5-67
+33-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:26:22-65
+34    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+34-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:27:5-73
+34-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:27:22-71
+35
+36    <uses-permission-sdk-23 android:name="android.permission.ACCESS_COARSE_LOCATION" />
+36-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:28:5-87
+36-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:28:29-85
+37
+38    <!--
+39         Add this line if your application always requires BLE. More info can be found on:
+40         https://developer.android.com/guide/topics/connectivity/bluetooth-le.html#permissions
+41    -->
+42    <uses-feature
+42-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:33:5-89
+43        android:name="android.hardware.bluetooth_le"
+43-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:33:19-63
+44        android:required="true" />
+44-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:33:64-87
+45
+46    <uses-permission android:name="android.permission.STORAGE" />
+46-->[:expo-file-system] /Users/jinwonpark/dev/purrsong/bleplxexpo/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:15:5-66
+46-->[:expo-file-system] /Users/jinwonpark/dev/purrsong/bleplxexpo/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:15:22-63
+47    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+47-->[:expo-location] /Users/jinwonpark/dev/purrsong/bleplxexpo/node_modules/expo-location/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:5-77
+47-->[:expo-location] /Users/jinwonpark/dev/purrsong/bleplxexpo/node_modules/expo-location/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:22-74
+48    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+48-->[io.nlopez.smartlocation:library:3.2.11] /Users/jinwonpark/.gradle/caches/transforms-2/files-2.1/53f0f0c97db78793608ce3ca94f80773/library-3.2.11/AndroidManifest.xml:13:5-79
+48-->[io.nlopez.smartlocation:library:3.2.11] /Users/jinwonpark/.gradle/caches/transforms-2/files-2.1/53f0f0c97db78793608ce3ca94f80773/library-3.2.11/AndroidManifest.xml:13:22-76
+49    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+49-->[io.nlopez.smartlocation:library:3.2.11] /Users/jinwonpark/.gradle/caches/transforms-2/files-2.1/53f0f0c97db78793608ce3ca94f80773/library-3.2.11/AndroidManifest.xml:15:5-98
+49-->[io.nlopez.smartlocation:library:3.2.11] /Users/jinwonpark/.gradle/caches/transforms-2/files-2.1/53f0f0c97db78793608ce3ca94f80773/library-3.2.11/AndroidManifest.xml:15:22-95
+50    <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" /> <!-- END OPTIONAL PERMISSIONS -->
+50-->[io.nlopez.smartlocation:library:3.2.11] /Users/jinwonpark/.gradle/caches/transforms-2/files-2.1/53f0f0c97db78793608ce3ca94f80773/library-3.2.11/AndroidManifest.xml:16:5-94
+50-->[io.nlopez.smartlocation:library:3.2.11] /Users/jinwonpark/.gradle/caches/transforms-2/files-2.1/53f0f0c97db78793608ce3ca94f80773/library-3.2.11/AndroidManifest.xml:16:22-91
+51    <application
+51-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:36:5-54:19
+52        android:name="com.bleplxexpo.MainApplication"
+52-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:37:7-38
+53        android:allowBackup="false"
+53-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:41:7-34
+54        android:appComponentFactory="android.support.v4.app.CoreComponentFactory"
+54-->[com.android.support:support-compat:28.0.0] /Users/jinwonpark/.gradle/caches/transforms-2/files-2.1/b73d0db3c489aeab8b531c92b0313ef9/support-compat-28.0.0/AndroidManifest.xml:22:18-91
+55        android:debuggable="true"
+56        android:icon="@mipmap/ic_launcher"
+56-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:39:7-41
+57        android:label="@string/app_name"
+57-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:38:7-39
+58        android:roundIcon="@mipmap/ic_launcher_round"
+58-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:40:7-52
+59        android:theme="@style/AppTheme" >
+59-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:42:7-38
+60        <activity
+60-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:43:7-52:18
+61            android:name="com.bleplxexpo.MainActivity"
+61-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:44:9-37
+62            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+62-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:46:9-79
+63            android:label="@string/app_name"
+63-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:45:9-41
+64            android:windowSoftInputMode="adjustResize" >
+64-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:47:9-51
+65            <intent-filter>
+65-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:48:9-51:25
+66                <action android:name="android.intent.action.MAIN" />
+66-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:49:13-65
+66-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:49:21-62
+67
+68                <category android:name="android.intent.category.LAUNCHER" />
+68-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:50:13-73
+68-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:50:23-70
+69            </intent-filter>
+70        </activity>
+71        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
+71-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:53:7-84
+71-->/Users/jinwonpark/dev/purrsong/bleplxexpo/android/app/src/main/AndroidManifest.xml:53:17-81
+72
+73        <provider
+73-->[:expo-file-system] /Users/jinwonpark/dev/purrsong/bleplxexpo/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:18:9-27:20
+74            android:name="expo.modules.filesystem.FileSystemFileProvider"
+74-->[:expo-file-system] /Users/jinwonpark/dev/purrsong/bleplxexpo/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:19:13-74
+75            android:authorities="com.bleplxexpo.FileSystemFileProvider"
+75-->[:expo-file-system] /Users/jinwonpark/dev/purrsong/bleplxexpo/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:20:13-74
+76            android:exported="false"
+76-->[:expo-file-system] /Users/jinwonpark/dev/purrsong/bleplxexpo/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:21:13-37
+77            android:grantUriPermissions="true" >
+77-->[:expo-file-system] /Users/jinwonpark/dev/purrsong/bleplxexpo/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:22:13-47
+78            <meta-data
+78-->[:expo-file-system] /Users/jinwonpark/dev/purrsong/bleplxexpo/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:24:13-26:70
+79                android:name="android.support.FILE_PROVIDER_PATHS"
+79-->[:expo-file-system] /Users/jinwonpark/dev/purrsong/bleplxexpo/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:25:17-67
+80                android:resource="@xml/file_system_provider_paths" />
+80-->[:expo-file-system] /Users/jinwonpark/dev/purrsong/bleplxexpo/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:26:17-67
+81        </provider>
+82
+83        <service
+83-->[:expo-location] /Users/jinwonpark/dev/purrsong/bleplxexpo/node_modules/expo-location/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:16:9-18:40
+84            android:name="expo.modules.location.services.LocationTaskService"
+84-->[:expo-location] /Users/jinwonpark/dev/purrsong/bleplxexpo/node_modules/expo-location/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:17:13-78
+85            android:exported="false" />
+85-->[:expo-location] /Users/jinwonpark/dev/purrsong/bleplxexpo/node_modules/expo-location/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:18:13-37
+86
+87        <activity
+87-->[com.google.android.gms:play-services-base:16.0.1] /Users/jinwonpark/.gradle/caches/transforms-2/files-2.1/095b772551dda67e16f51d423e0623c7/play-services-base-16.0.1/AndroidManifest.xml:23:9-26:75
+88            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+88-->[com.google.android.gms:play-services-base:16.0.1] /Users/jinwonpark/.gradle/caches/transforms-2/files-2.1/095b772551dda67e16f51d423e0623c7/play-services-base-16.0.1/AndroidManifest.xml:24:13-79
+89            android:exported="false"
+89-->[com.google.android.gms:play-services-base:16.0.1] /Users/jinwonpark/.gradle/caches/transforms-2/files-2.1/095b772551dda67e16f51d423e0623c7/play-services-base-16.0.1/AndroidManifest.xml:25:13-37
+90            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+90-->[com.google.android.gms:play-services-base:16.0.1] /Users/jinwonpark/.gradle/caches/transforms-2/files-2.1/095b772551dda67e16f51d423e0623c7/play-services-base-16.0.1/AndroidManifest.xml:26:13-72
+91
+92        <meta-data
+92-->[com.google.android.gms:play-services-basement:16.0.1] /Users/jinwonpark/.gradle/caches/transforms-2/files-2.1/7ada373fc6164c809f0ba958b45379c3/play-services-basement-16.0.1/AndroidManifest.xml:23:9-25:69
+93            android:name="com.google.android.gms.version"
+93-->[com.google.android.gms:play-services-basement:16.0.1] /Users/jinwonpark/.gradle/caches/transforms-2/files-2.1/7ada373fc6164c809f0ba958b45379c3/play-services-basement-16.0.1/AndroidManifest.xml:24:13-58
+94            android:value="@integer/google_play_services_version" />
+94-->[com.google.android.gms:play-services-basement:16.0.1] /Users/jinwonpark/.gradle/caches/transforms-2/files-2.1/7ada373fc6164c809f0ba958b45379c3/play-services-basement-16.0.1/AndroidManifest.xml:25:13-66
+95
+96        <service
+96-->[io.nlopez.smartlocation:library:3.2.11] /Users/jinwonpark/.gradle/caches/transforms-2/files-2.1/53f0f0c97db78793608ce3ca94f80773/library-3.2.11/AndroidManifest.xml:19:9-21:40
+97            android:name="io.nlopez.smartlocation.activity.providers.ActivityGooglePlayServicesProvider$ActivityRecognitionService"
+97-->[io.nlopez.smartlocation:library:3.2.11] /Users/jinwonpark/.gradle/caches/transforms-2/files-2.1/53f0f0c97db78793608ce3ca94f80773/library-3.2.11/AndroidManifest.xml:20:13-132
+98            android:exported="false" />
+98-->[io.nlopez.smartlocation:library:3.2.11] /Users/jinwonpark/.gradle/caches/transforms-2/files-2.1/53f0f0c97db78793608ce3ca94f80773/library-3.2.11/AndroidManifest.xml:21:13-37
+99        <service
+99-->[io.nlopez.smartlocation:library:3.2.11] /Users/jinwonpark/.gradle/caches/transforms-2/files-2.1/53f0f0c97db78793608ce3ca94f80773/library-3.2.11/AndroidManifest.xml:22:9-24:40
+100            android:name="io.nlopez.smartlocation.geofencing.providers.GeofencingGooglePlayServicesProvider$GeofencingService"
+100-->[io.nlopez.smartlocation:library:3.2.11] /Users/jinwonpark/.gradle/caches/transforms-2/files-2.1/53f0f0c97db78793608ce3ca94f80773/library-3.2.11/AndroidManifest.xml:23:13-127
+101            android:exported="false" />
+101-->[io.nlopez.smartlocation:library:3.2.11] /Users/jinwonpark/.gradle/caches/transforms-2/files-2.1/53f0f0c97db78793608ce3ca94f80773/library-3.2.11/AndroidManifest.xml:24:13-37
+102        <service
+102-->[io.nlopez.smartlocation:library:3.2.11] /Users/jinwonpark/.gradle/caches/transforms-2/files-2.1/53f0f0c97db78793608ce3ca94f80773/library-3.2.11/AndroidManifest.xml:25:9-27:40
+103            android:name="io.nlopez.smartlocation.geocoding.providers.AndroidGeocodingProvider$AndroidGeocodingService"
+103-->[io.nlopez.smartlocation:library:3.2.11] /Users/jinwonpark/.gradle/caches/transforms-2/files-2.1/53f0f0c97db78793608ce3ca94f80773/library-3.2.11/AndroidManifest.xml:26:13-120
+104            android:exported="false" />
+104-->[io.nlopez.smartlocation:library:3.2.11] /Users/jinwonpark/.gradle/caches/transforms-2/files-2.1/53f0f0c97db78793608ce3ca94f80773/library-3.2.11/AndroidManifest.xml:27:13-37
+105    </application>
+106
+107</manifest>
